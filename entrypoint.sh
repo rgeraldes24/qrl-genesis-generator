@@ -88,6 +88,7 @@ gen_cl_config(){
           --mnemonic "$EL_AND_CL_MNEMONIC"
           --keystore-password-file /data/metadata/keystore_password.txt
           --chain-name "dev"
+          --execution-address "$WITHDRAWAL_ADDRESS"
         )
         /usr/local/bin/deposit "${validator_keys_args[@]}"
 
