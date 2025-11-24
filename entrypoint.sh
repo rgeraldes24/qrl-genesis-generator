@@ -90,6 +90,12 @@ gen_cl_config(){
           --chain-name "dev"
           --execution-address "$WITHDRAWAL_ADDRESS"
         )
+        if [ "$LIGHT_KDF_ENABLED" = true ] ; then
+          validator_keys_args+=(
+            --lightkdf
+          )
+        fi
+
         /usr/local/bin/deposit "${validator_keys_args[@]}"
 
         # Generate genesis 
